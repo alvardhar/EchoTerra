@@ -1,0 +1,80 @@
+body {
+  background-color: #f1f6e0;
+  font-family: Georgia, "Goudy Old Style", "Times New Roman", serif;
+  margin: 20px;
+  color: #01352c;
+  line-height: 1.6;
+  text-align: center;
+}
+
+h1 {
+  background-color: #bad8b6;
+  color: #01352c;
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/* Intro block with border similar to About page sections */
+#scanner-intro {
+  max-width: 800px;
+  margin: 0 auto 25px auto;
+  background-color: #e1eacd;
+  border-radius: 8px;
+  border: 1px solid #bad8b6;
+  padding: 15px 18px;
+  text-align: left;
+}
+
+#scanner-intro h2 {
+  margin-top: 0;
+  text-align: left;
+}
+
+#intro-text,
+.explain-text {
+  margin-bottom: 10px;
+}
+
+/* Scanner box with border like mission/vision cards */
+#scanner-box {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #bad8b6;
+  border-radius: 8px;
+  border: 1px solid #61b390;
+  padding: 15px 18px;
+}
+
+#scanner-box h2 {
+  margin-top: 0;
+}
+
+button {
+  background-color: #01352c;
+  color: #e1eacd;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+button:hover {
+  background-color: #61b390;
+  color: #01352c;
+}
+
+#scanner-container {
+  margin-top: 15px;
+  display: inline-block;
+}
+
+#webcam-container {
+  margin-bottom: 8px;
+}
+
+#label-container div {
+  margin: 3px 0;
+}

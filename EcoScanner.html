@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eco Scanner</title>
+  <link rel="stylesheet" href="EcoScanner.css">
+</head>
+
+<body>
+  <h1>Eco Scanner</h1>
+
+  <section id="scanner-intro">
+    <h2>How the Eco Scanner Works</h2>
+    <p id="intro-text">
+      The EchoTerra Eco Scanner is a small experiment that uses machine learning to recognise
+      different types of everyday items. By looking at what you show to the camera, it tries
+      to guess which category your object belongs to.
+    </p>
+    <p class="explain-text">
+      Our model was trained with three simple classes: objects that are usually <strong>reusable</strong>,
+      objects that are <strong>single‑use</strong>, and items we should generally <strong>avoid</strong>,
+      such as trash and litter. It is not perfect, but it shows how technology can support
+      more sustainable decisions.
+    </p>
+    <p class="explain-text">
+      To use the Eco Scanner, point a clear object at your webcam (for example, a reusable bottle,
+      a plastic cup or a piece of rubbish) and press <strong>Start</strong>. After a short moment,
+      you will see the model’s predictions under the video. Higher numbers mean the model is more
+      confident about that class.
+    </p>
+  </section>
+
+  <section id="scanner-box">
+    <h2>Try the Eco Scanner</h2>
+    <button type="button" onclick="init()">Start</button>
+
+    <div id="scanner-container">
+      <div id="webcam-container"></div>
+      <div id="label-container"></div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+  <script type="text/javascript">
+    const URL = "https://teachablemachine.withgoogle.com/models/M3rSecUsJ/";
+
+    let model, webcam, labelContainer, maxPredictions;
+
+    async function init() {
+      const modelURL = URL + "model.json";
+      const metadataURL = URL + "metadata.json";
+
+      model = await tmImage.load(modelURL, metadataURL);
+      maxPredictions = model.getTotalClasses();
+
+      const flip = true;
+      webcam = new tmImage.Webcam(200, 200, flip);
+      await webcam.setup();
+      await webcam.play();
+      window.requestAnimationFrame(loop);
+
+      document.getElementById("webcam-container").appendChild(webcam.canvas);
+      labelContainer = document.getElementById("label-container");
+      labelContainer.innerHTML = "";
+      for (let i = 0; i < maxPredictions; i++) {
+        labelContainer.appendChild(document.createElement("div"));
+      }
+    }
+
+    async function loop() {
+      webcam.update();
+      await predict();
+      window.requestAnimationFrame(loop);
+    }
+
+    async function predict() {
+      const prediction = await model.predict(webcam.canvas);
+      for (let i = 0; i < maxPredictions; i++) {
+        const classPrediction =
+          prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+        labelContainer.childNodes[i].innerHTML = classPrediction;
+      }
+    }
+  </script>
+</body>
+</html>

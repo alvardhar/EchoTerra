@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Eco Scanner</title>
+  <link rel="stylesheet" href="EcoScanner.css">
+</head>
+
+<body>
+  <h1>Eco Scanner</h1>
+
+  <!-- Full-width description -->
+  <section id="scanner-intro">
+    <h2>How the Eco Scanner Works</h2>
+    <p id="intro-text">
+      The EchoTerra Eco Scanner is a small experiment that uses machine learning to recognise
+      different types of everyday items. By looking at what you show to the camera, it tries
+      to guess which category your object belongs to.
+    </p>
+    <p class="explain-text">
+      Our model was trained with three simple classes: objects that are usually <strong>reusable</strong>,
+      objects that are <strong>single‑use</strong>, and items we should generally <strong>avoid</strong>,
+      such as trash and litter. It is not perfect, but it shows how technology can support
+      more sustainable decisions.
+    </p>
+  </section>
+
+  <!-- Three info cards like team members -->
+  <section id="classes-info">
+    <h2>What the Scanner Looks For</h2>
+    <div class="class-cards">
+      <div class="class-card">
+        <img src="https://images.pexels.com/photos/3738084/pexels-photo-3738084.jpeg"
+             alt="Reusable bottle and cup">
+        <h3>Reusable</h3>
+        <p>
+          Objects made to be used many times, such as metal bottles, glass jars, cloth bags
+          and solid coffee cups.
+        </p>
+      </div>
+
+      <div class="class-card">
+        <img src="https://images.pexels.com/photos/802221/pexels-photo-802221.jpeg"
+             alt="Single-use plastic cup">
+        <h3>Single‑use</h3>
+        <p>
+          Items designed to be used once, like plastic cups, paper coffee cups, thin plastic
+          bottles and disposable cutlery.
+        </p>
+      </div>
+
+      <div class="class-card">
+        <img src="https://images.pexels.com/photos/1600583/pexels-photo-1600583.jpeg
+             alt="Litter on the ground">
+        <h3>Avoid</h3>
+        <p>
+          Rubbish and litter in nature: plastic bags on the ground, trash near rivers,
+          overflowing bins and similar waste.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scanner box in the middle -->
+  <section id="scanner-box">
+    <h2>Try the Eco Scanner</h2>
+    <p class="explain-text">
+      Hold one item at a time in front of your webcam and press <strong>Start</strong>.
+      The model will estimate how likely it is to be reusable, single‑use or something we
+      should avoid.
+    </p>
+
+    <!-- When we click this button, the init() function in JS will run -->
+    <button type="button" onclick="init()">Start</button>
+
+    <div id="scanner-container">
+      <div id="webcam-container"></div>
+      <div id="label-container"></div>
+    </div>
+  </section>
+
+  <!-- External libraries from Teachable Machine / TensorFlow -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+  <script type="text/javascript">
+    /*
+      Eco Scanner – Teachable Machine code for EchoTerra
+
+      First of all, we decided to use Teachable Machine to train a small image model
+      with three classes: reusable, single‑use and avoid. Teachable Machine gave us
+      a base URL for our model, which we use below.
+      Model page: https://teachablemachine.withgoogle.com/models/M3rSecUsJ/
+    */
+
+    var URL = "https://teachablemachine.withgoogle.com/models/M3rSecUsJ/";
+
+    // We keep these variables outside the functions so we can use them everywhere.
+    var model;
+    var webcam;
+    var labelContainer;
+    var maxPredictions = 0;
+
+    /*
+      When the user clicks the Start button, the init() function is called.
+      In this function we:
+      1) load the model and metadata,
+      2) set up the webcam,
+      3) create the lines where we will show the predictions,
+      4) start the loop to update predictions.
+    */
+    function init() {
+      var modelURL = URL + "model.json";
+      var metadataURL = URL + "metadata.json";
+
+      // Load the model from Teachable Machine
+      tmImage.load(modelURL, metadataURL).then(function(loadedModel) {
+        model = loadedModel;
+        maxPredictions = model.getTotalClasses();
+
+        // After loading the model we prepare the webcam
+        var flip = true; // we want a mirror image
+        webcam = new tmImage.Webcam(200, 200, flip);
+
+        webcam.setup().then(function () {
+          webcam.play().then(function () {
+            // Attach webcam canvas to the HTML
+            var webcamContainer = document.getElementById("webcam-container");
+            webcamContainer.innerHTML = "";
+            webcamContainer.appendChild(webcam.canvas);
+
+            // Prepare a line of text for each class
+            labelContainer = document.getElementById("label-container");
+            labelContainer.innerHTML = "";
+            var i;
+            for (i = 0; i < maxPredictions; i++) {
+              var line = document.createElement("p");
+              labelContainer.appendChild(line);
+            }
+
+            // Start the loop that keeps updating the predictions
+            window.requestAnimationFrame(loop);
+          });
+        });
+      }).catch(function(error) {
+        alert("Eco Scanner error: " + error);
+      });
+    }
+
+    /*
+      The loop() function runs again and again.
+      Each time we:
+      - update the webcam frame,
+      - call predict() to refresh the results on the screen.
+    */
+    function loop() {
+      webcam.update();
+      predict();
+      window.requestAnimationFrame(loop);
+    }
+
+    /*
+      In predict(), we send the current webcam image to the model.
+      The model returns an array of predictions (one per class).
+      We write the class name and its probability in the label container.
+    */
+    function predict() {
+      model.predict(webcam.canvas).then(function(prediction) {
+        var i;
+        for (i = 0; i < maxPredictions; i++) {
+          var className = prediction[i].className;
+          var probability = prediction[i].probability.toFixed(2);
+          var text = className + ": " + probability;
+          labelContainer.childNodes[i].innerHTML = text;
+        }
+      });
+    }
+  </script>
+</body>
+</html>

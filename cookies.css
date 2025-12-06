@@ -1,15 +1,18 @@
+/* Cookie banner – full width feeling but centered */
+
 #cookie-banner {
   position: fixed;
   bottom: 15px;
   left: 50%;
   transform: translateX(-50%);
-  max-width: 480px;
-  background-color: #e1eacd;
-  border: 1px solid #bad8b6;
+  width: calc(100% - 40px);
+  max-width: 520px;
+  background-color: #f5f0e8;   /* cream */
+  border: 1px solid #8a9b5a;   /* light olive */
   border-radius: 8px;
   padding: 10px 14px;
   font-family: Georgia, "Goudy Old Style", "Times New Roman", serif;
-  color: #01352c;
+  color: #1f3d2b;
   font-size: 0.95rem;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.15);
   text-align: left;
@@ -21,8 +24,8 @@
 }
 
 #cookie-banner button {
-  background-color: #01352c;
-  color: #e1eacd;
+  background-color: #7E9DA2;   /* blue */
+  color: #f5f0e8;              /* cream */
   border: none;
   border-radius: 4px;
   padding: 6px 12px;
@@ -31,7 +34,7 @@
 }
 
 #cookie-banner button:hover {
-  background-color: #61b390;
-  color: #01352c;
+  background-color: #7ea04d;   /* avocado */
+  color: #1f3d2b;              /* dark green */
 }
 

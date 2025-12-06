@@ -1,52 +1,112 @@
 body {
-  background-color: #f8fde6; 
   font-family: Georgia, "Goudy Old Style", "Times New Roman", serif;
+  background-color: #fbf7f2;  
+  color: #1f3d2b;
   margin: 20px;
-  color: #01352c;
   line-height: 1.7;
 }
 
-h1 {
-  color: #01352c;
+#navigation {
+  list-style-type: none;
+  margin: 10px auto;
+  padding: 6px;
+  width: fit-content;
+  background-color: #faf5ef;
+  border-radius: 999px;
+  border: 1px solid #8a9b5a;
+  overflow: hidden;
+}
+
+/* items in a row */
+#navigation li {
+  float: left;
+}
+
+/* logo: plain image, no link, no hover */
+#nav-logo {
+  padding: 0 10px;
+}
+
+#nav-logo img {
+  height: 34px;
+  width: 34px;
+  border-radius: 0%; 
+  display: block;
+}
+
+/* text links: rounded chips */
+#navigation a {
+  display: block;
+  padding: 10px 20px;
   text-align: center;
-  background-color: #bad8b6;
-  margin-bottom: 20px;
-  padding: 10px 0;
-  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 18px;
+  background-color: transparent;
+}
+
+/* normal + visited */
+#navigation a:link,
+#navigation a:visited {
+  color: #1f3d2b;
+}
+
+/* hover */
+#navigation a:hover {
+  background-color: #7E9DA2;
+  color: #fbf7f2;
+}
+
+/* active click */
+#navigation a:active {
+  color: #fbf7f2;
+}
+
+/* current page (class="active") */
+#navigation a.active {
+  background-color: #dfe8dd;
+  color: #1f3d2b;
+}
+
+/* clear floats */
+#navigation::after {
+  content: "";
+  display: block;
+  clear: both;
 }
 
 h2 {
-  color: #01352c;
-  margin-top: 20px;
+  font-size: 1.6rem;
+  color: #1f3d2b;
+  margin: 20px 0 10px 0;
 }
 
-#example {
-  color: #01352c;
-  font-weight: bold;
-  padding: 5px 0;
+h3 {
+  font-size: 1.25rem;
+  color: #7ea04d;
+  margin: 12px 0 6px 0;
 }
 
-#date {
-  font-size: 0.95rem;
-  color: #01352c;
-  padding: 8px 14px;
-  background-color: #e1eacd;
-  border-radius: 6px;
-  margin: 16px auto 30px auto;
-  width: fit-content;
-  box-shadow: 1px 1px 4px #bad8b6;
+/* main sections full width except Walk With Us */
+#echoterra-intro,
+#results-matter,
+#mission-vision,
+#team-members {
+  max-width: 100%;
+  width: calc(100% - 40px);
+  margin: 0 auto 24px auto;
 }
 
+/* intro text + image */
 #echoterra-intro {
-  display: flex;       
-  /* Using flexbox to place the text and image next to each other */
+  background-color: #faf5ef;     
+  border: 1px solid #7ea04d;
+  border-radius: 8px;
+  padding: 15px 18px;
+  display: flex;
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
-  padding: 15px;
-  background-color: #e1eacd;
-  border-radius: 8px;
-  border: 1px solid #bad8b6;
 }
 
 .intro-text {
@@ -61,60 +121,61 @@ h2 {
 .intro-image img {
   max-width: 100%;
   border-radius: 8px;
-  border: 3px solid #61b390;
+  border: 3px solid #7E9DA2;
 }
 
+/* Results section */
 #results-matter {
-  background-color: #e1eacd;
-  padding: 15px;
+  background-color: #c7da9b;     
   border-radius: 8px;
-  margin-top: 25px;
+  border: 1px solid #8a9b5a;
+  padding: 15px 18px;
 }
 
 .results-intro {
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .results-container {
-  display: flex;          
-  /* Using flexbox here to arrange result cards in a row that wraps on small screens */
+  display: flex;
   flex-wrap: wrap;
   gap: 14px;
 }
 
 .result {
-  flex: 1 1 190px;
-  background-color: #f5f7ee;
+  flex: 1 1 200px;
+  background-color: #ffffff;     
   border-radius: 6px;
-  border: 1px solid #61b390;
-  padding: 10px;
+  border: 1px solid #7ea04d;
+  padding: 10px 12px;
 }
 
+/* Mission & Vision */
 #mission-vision {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-top: 25px;
 }
 
 .card {
   flex: 1 1 260px;
-  background-color: #f5f7ee;
+  background-color: #ffffff;
   border-radius: 8px;
-  padding: 12px;
-  border: 1px solid #61b390;
+  border: 1px solid #8a9b5a;
+  padding: 12px 14px;
 }
 
 .mission-card {
-  background-color: #bad8b6;
+  background-color: #edf5e5;     
 }
 
 .vision-card {
-  background-color: #e1eacd;
+  background-color: #eaf3f7;      
 }
 
+/* Team members */
 #team-members {
-  margin-top: 25px;
+  /* width already set above */
 }
 
 .team-intro {
@@ -125,69 +186,60 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+  justify-content: center;
 }
 
 .team-member {
   flex: 1 1 180px;
   max-width: 220px;
   text-align: center;
-  background-color: #f5f7ee;
+  background-color: #ffffff;
   border-radius: 8px;
-  padding: 10px;
-  border: 1px solid #bad8b6;
+  border: 1px solid #7ea04d;
+  padding: 10px 12px;
 }
 
 .team-member img {
   width: 100%;
   border-radius: 50%;
+  border: 3px solid #7E9DA2;
   margin-bottom: 8px;
-  border: 3px solid #61b390;
 }
 
+/* Walk With Us */
 #newsletter-signup {
-  background-color: #bad8b6;
+  max-width: 450px;
+  margin: 0 auto 24px auto;
+  background-color: #faf5ef;
   border-radius: 8px;
-  padding: 12px;
-  margin-top: 25px;
+  border: 1px solid #8a9b5a;
+  padding: 12px 14px;
 }
 
 input[type="text"],
 input[type="email"] {
-  width: 75%;
+  width: 100%;
   padding: 7px;
   margin: 6px 0 12px 0;
-  border: 1px solid #01352c;
+  border: 1px solid #1f3d2b;
   border-radius: 4px;
   font-size: 1rem;
-  display: block;
 }
 
-input[type="submit"] {
-  background-color: #01352c;
-  color: #e1eacd;
+input[type="submit"],
+button {
+  background-color: #7E9DA2;
+  color: #f5f0e8;
   font-size: 1rem;
   border: none;
   border-radius: 5px;
   padding: 8px 15px;
-  margin-top: 5px;
   cursor: pointer;
 }
 
-input[type="submit"]:hover {
-  background-color: #61b390;
-  color: #01352c;
-}
-
-button {
-  background-color: #01352c;
-  color: white;
-  font-size: 1rem;
-  border: none;
-  border-radius: 4px;
-  padding: 6px 12px;
-  cursor: pointer;
-}
-
+input[type="submit"]:hover,
 button:hover {
-  background-color: #61b390;
+  background-color: #7ea04d;
+  color: #1f3d2b;
 }
+

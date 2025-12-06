@@ -3,7 +3,7 @@ HTML
 <html>
   <head>
     <title>EchoTerra</title>
-    <link rel="stylesheet" type="text/css" href="nav.css">
+    <link rel="stylesheet" href="nav.css">
   </head>
 
   <body>

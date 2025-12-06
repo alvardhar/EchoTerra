@@ -1,34 +1,110 @@
 body {
-  background-color: #f1f6e0;
   font-family: Georgia, "Goudy Old Style", "Times New Roman", serif;
+  background-color: #fbf7f2;
+  color: #1f3d2b;
   margin: 20px;
-  color: #01352c;
   line-height: 1.6;
   text-align: center;
 }
 
-h1 {
-  background-color: #bad8b6;
-  color: #01352c;
-  padding: 10px 0;
-  margin-bottom: 20px;
-  border-radius: 8px;
+body { 
+  background-color: #fbf7f2;
+  font-family: Georgia, "Goudy Old Style", "Times New Roman", serif;
+  color: #1f3d2b;
+  margin: 20px;
 }
 
-/* Intro block with border similar to About page sections */
+/* pill‑shaped navigation bar */
+#navigation {
+  list-style-type: none;
+  margin: 10px auto;
+  padding: 6px;
+  width: fit-content;
+  background-color: #faf5ef;
+  border-radius: 999px;
+  border: 1px solid #8a9b5a;
+  overflow: hidden;
+}
+
+/* items in a row */
+#navigation li {
+  float: left;
+}
+
+/* logo: plain image, no link, no hover */
+#nav-logo {
+  padding: 0 10px;
+}
+
+#nav-logo img {
+  height: 34px;
+  width: 34px;
+  border-radius: 0%;
+  display: block;
+}
+
+/* text links: rounded chips */
+#navigation a {
+  display: block;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 18px;
+  background-color: transparent;
+}
+
+/* normal + visited */
+#navigation a:link,
+#navigation a:visited {
+  color: #1f3d2b;
+}
+
+/* hover */
+#navigation a:hover {
+  background-color: #7E9DA2;
+  color: #fbf7f2;
+}
+
+/* active click */
+#navigation a:active {
+  color: #fbf7f2;
+}
+
+/* current page (class="active") */
+#navigation a.active {
+  background-color: #dfe8dd;
+  color: #1f3d2b;
+}
+
+/* clear floats */
+#navigation::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+h2 {
+  font-size: 1.6rem;
+  color: #1f3d2b;
+  margin: 20px 0 10px 0;
+}
+
+/* How the Eco Scanner Works – mission green background */
 #scanner-intro {
-  max-width: 800px;
+  width: calc(100% - 40px);
+  max-width: 100%;
   margin: 0 auto 25px auto;
-  background-color: #e1eacd;
+  background-color: #edf5e5;   /* mission green */
   border-radius: 8px;
-  border: 1px solid #bad8b6;
+  border: 1px solid #7ea04d;
   padding: 15px 18px;
   text-align: left;
 }
 
 #scanner-intro h2 {
   margin-top: 0;
-  text-align: left;
 }
 
 #intro-text,
@@ -36,13 +112,55 @@ h1 {
   margin-bottom: 10px;
 }
 
-/* Scanner box with border like mission/vision cards */
-#scanner-box {
-  max-width: 500px;
-  margin: 0 auto;
-  background-color: #bad8b6;
+/* class cards */
+
+#classes-info {
+  width: calc(100% - 40px);
+  max-width: 100%;
+  margin: 0 auto 25px auto;
+}
+
+#classes-info h2 {
+  margin-bottom: 15px;
+}
+
+.class-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.class-card {
+  flex: 1 1 220px;
+  max-width: 280px;
+  background-color: #ffffff;
   border-radius: 8px;
-  border: 1px solid #61b390;
+  border: 1px solid #7ea04d;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.class-card img {
+  width: 100%;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  border: 2px solid #7E9DA2;
+}
+
+.class-card h3 {
+  margin: 4px 0 6px 0;
+}
+
+/* Try the Eco Scanner – vision blue background */
+
+#scanner-box {
+  width: calc(100% - 40px);
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #eaf3f7;   /* vision blue */
+  border-radius: 8px;
+  border: 1px solid #8a9b5a;
   padding: 15px 18px;
 }
 
@@ -50,9 +168,15 @@ h1 {
   margin-top: 0;
 }
 
+#scanner-box .explain-text {
+  text-align: left;
+  margin: 0 auto 10px auto;
+  max-width: 500px;
+}
+
 button {
-  background-color: #01352c;
-  color: #e1eacd;
+  background-color: #7E9DA2;
+  color: #f5f0e8;
   font-size: 1rem;
   border: none;
   border-radius: 5px;
@@ -62,8 +186,8 @@ button {
 }
 
 button:hover {
-  background-color: #61b390;
-  color: #01352c;
+  background-color: #7ea04d;
+  color: #1f3d2b;
 }
 
 #scanner-container {
@@ -75,6 +199,7 @@ button:hover {
   margin-bottom: 8px;
 }
 
+#label-container p,
 #label-container div {
   margin: 3px 0;
 }

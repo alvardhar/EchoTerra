@@ -1,0 +1,108 @@
+/* 1. Page base */
+body {
+  background-color: #fbf7f2;               
+  color: #1f3d2b;                           /* main text color */
+  font-family: Georgia, "Goudy Old Style", "Times New Roman", serif;
+  margin: 20px;                             /* space around whole page */
+  line-height: 1.7;                         /* comfortable reading */
+}
+
+/* 2. Headings */
+h1 {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #f5f0e8;                           /* light text on bar */
+  background-color: #a9c2c6;                /* header bar color */
+  margin-bottom: 24px;
+  border-radius: 8px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  color: #1f3d2b;
+  margin: 20px 0 10px 0;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: #7ea04d;                           /* accent heading */
+  margin: 12px 0 6px 0;
+}
+
+/* 3. Standard section / card pattern */
+.section-wide {
+  max-width: 100%;
+  width: calc(100% - 40px);                 /* full width with 20px side space */
+  margin: 0 auto 24px auto;                 /* center + gap under section */
+  padding: 15px 18px;
+  background-color: #faf5ef;                /* light panel background */
+  border: 1px solid #7ea04d;                /* thin colored border */
+  border-radius: 8px;
+}
+
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.card-item {
+  flex: 1 1 200px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #8a9b5a;
+  padding: 10px 12px;
+}
+
+/* 4. Small centered call‑to‑action block (like newsletter) */
+.section-narrow {
+  max-width: 450px;
+  margin: 0 auto 24px auto;
+  padding: 12px 14px;
+  background-color: #faf5ef;
+  border-radius: 8px;
+  border: 1px solid #8a9b5a;
+}
+
+/* 5. Images in cards */
+.img-round {
+  width: 100%;
+  border-radius: 8px;
+  border: 3px solid #7E9DA2;
+}
+
+.img-circle {
+  width: 100%;
+  border-radius: 50%;
+  border: 3px solid #7E9DA2;
+}
+
+/* 6. Form + buttons */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 7px;
+  margin: 6px 0 12px 0;
+  border: 1px solid #1f3d2b;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button,
+input[type="submit"] {
+  background-color: #7E9DA2;
+  color: #f5f0e8;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #7ea04d;
+  color: #1f3d2b;
+}

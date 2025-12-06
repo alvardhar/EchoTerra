@@ -1,0 +1,138 @@
+HTML 
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EchoTerra</title>
+    <link rel="stylesheet" type="text/css" href="nav.css">
+  </head>
+
+  <body>
+   <ul id="navigation">
+  <li id="nav-logo">
+    <img src="logo.png" alt="EchoTerra logo">
+  </li>
+
+  <li><a href="index.html">⌂ Home</a></li>
+  <li><a href="about.html">✧ About Us</a></li>
+  <li><a href="product.html">◆ Products &amp; Services</a></li>
+  <li><a href="tips.html">✺ Eco Tips</a></li>
+  <li><a href="EcoScanner.html">✶ Eco Scanner</a></li>
+  <li><a href="calculator.html">∑ Calculator</a></li>
+  <li><a href="faq.html">？ FAQ</a></li>
+  <li><a href="register.html">✎ Register</a></li>
+  <li><a href="bag.html">✦ Shopping Bag</a></li>
+  <li><a href="contact.html">✉ Contact Us</a></li>
+</ul>
+
+<!--- Make sure that you add class="active" on the page that you are working on. 
+For example:  <li><a href="index.html" class="active">⌂ Home</a></li>   -->
+
+    <!-- rest of your page content goes here -->
+  </body>
+</html>
+
+
+CSS
+/* The comments we can include only on Home page, so if you are doing another page, just delete the comments*/
+
+body { 
+  /* We set a basic font and margin for the whole page
+     so the navigation bar and content use the same base style. */
+  background-color: #fbf7f2;
+  font-family: Georgia, "Goudy Old Style", "Times New Roman", serif;
+  color: #1f3d2b;
+  margin: 20px;
+}
+
+
+/* This list becomes our navigation bar container.
+   We remove default bullets, center it, and give it a pill shape. */
+#navigation {
+  list-style-type: none;
+  margin: 10px auto;
+  padding: 6px;
+  width: fit-content;
+  background-color: #faf5ef;
+  border-radius: 999px;      /* very large radius makes the bar rounded */
+  border: 1px solid #8a9b5a;
+  overflow: hidden;           /* hides anything that sticks outside the pill shape */
+}
+
+
+/* Each list item is placed next to each other horizontally. */
+#navigation li {
+  float: left;
+}
+
+
+/* The logo is just an image at the start of the bar, not a link.
+   We add a bit of horizontal padding so it is not glued to the edge. */
+#nav-logo {
+  padding: 0 10px;
+}
+
+
+/* The logo image is shown as a small circle inside the bar. */
+#nav-logo img {
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;        /* makes the logo image round */
+  display: block;            /* removes extra space under the image */
+}
+
+
+/* Each navigation link becomes a rounded “chip”.
+   We use padding and border-radius to create the shape. */
+#navigation a {
+  display: block;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 18px;       /* rounds the corners of each link block */
+  background-color: transparent;
+}
+
+
+/* Default and visited links share the same text color. */
+#navigation a:link,
+#navigation a:visited {
+  color: #1f3d2b;
+}
+
+
+/* When the mouse hovers over a link, we change background and text
+   so the user clearly sees which item is under the cursor. */
+#navigation a:hover {
+  background-color: #7E9DA2;
+  color: #fbf7f2;
+}
+
+
+/* While the link is actively clicked, we keep a strong text color. */
+#navigation a:active {
+  color: #fbf7f2;
+}
+
+
+/* The link for the current page gets a different background,
+   so visitors know which section they are on. */
+#navigation a.active {
+  background-color: #dfe8dd;
+  color: #1f3d2b;
+}
+
+
+/* After all the floated list items, this pseudo-element clears the float
+   so the layout below the navigation bar behaves normally. */
+#navigation::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+
+
+
+

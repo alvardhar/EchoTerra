@@ -1,0 +1,504 @@
+body {
+    font-family: 'Georgia', 'Goudy Old Style', 'Times New Roman', serif;
+    background-color: #ffffff;
+    color: #01352c;
+    margin: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #01352c;
+}
+
+.faq-controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+#faq-search {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #bad8b6;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+.faq-buttons button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #61b390;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.faq-buttons button:hover {
+    background-color: #01352c;
+}
+
+details {
+    border: 1px solid #bad8b6;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #fff;
+}
+
+summary {
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #01352c;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: '+';
+    font-size: 1.5em;
+    line-height: 0;
+    transition: transform 0.3s ease;
+    color: #61b390;
+}
+
+details[open] summary::after {
+    transform: rotate(45deg);
+}
+
+details[open] summary {
+    border-bottom: 1px solid #bad8b6;
+}
+
+.faq-answer {
+    padding: 10px;
+    color: #01352c;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #bad8b6;
+}
+
+.logo {
+    max-height: 50px;
+}
+
+#navigation {
+    height: 30px; 
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#navigation li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#navigation a {
+    text-decoration: none;
+    color: #01352c;
+    font-weight: bold;
+}
+
+#navigation a:hover {
+    color: #61b390;
+}
+
+.hero-section {
+    position: relative;
+    background-image: url('earth.jpg'); 
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 150px 20px;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #61b390;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #01352c;
+}
+
+.mission-section, .problem-section, .products-showcase, .calculator-cta, .faq-preview {
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 8px;
+
+}
+
+.mission-section {
+    background-color: #fff;
+}
+
+.problem-section {
+    background-color: #e1eacd;
+}
+
+.product-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #e1eacd;
+}
+
+.product-card {
+    width: 30%;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    border: 1px solid #bad8b6;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.calculator-cta {
+    background-color: #01352c;
+    color: white;
+}
+
+.calculator-cta h2 {
+    color: white;
+}
+
+.faq-preview ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.faq-preview li {
+    margin-bottom: 10px;
+}
+
+.faq-preview a {
+    text-decoration: none;
+    color: #01352c;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #01352c;
+    color: white;
+    padding: 20px 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-nav, .footer-contact, .footer-social {
+    width: 30%;
+}
+
+.footer-content h4 {
+    color: #61b390;
+}
+
+.footer-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-content a {
+    color: white;
+    text-decoration: none;
+}
+
+#carbon-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #bad8b6;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bad8b6;
+    border-radius: 4px;
+}
+
+#carbon-form button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #61b390;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.2em;
+}
+
+#carbon-form button:hover {
+    background-color: #01352c;
+}
+
+#result {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    border: 1px solid #bad8b6;
+}
+
+#result h2 {
+    text-align: center;
+    color: #01352c;
+}
+
+.footprint {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #61b390;
+    margin: 10px 0;
+}
+
+#result h3 {
+    margin-top: 20px;
+    color: #01352c;
+}
+
+#result ul {
+    list-style: none;
+    padding: 0;
+}
+
+#result li {
+    margin-bottom: 10px;
+}
+
+.reviews-section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.review-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    background-color: #e1eacd;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.review-card {
+    width: 30%;
+    margin-bottom: 30px;
+    background-color: #f9f9f9;
+    border: 1px solid #bad8b6;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.review-card img {
+    max-width: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.review-card p {
+    font-style: italic;
+    color: #555;
+}
+
+.review-card h4 {
+    font-weight: bold;
+    color: #01352c;
+    margin-top: 15px;
+}
+
+.UML {
+  position: relative;
+  width: 100%;
+  height: 1000;
+  padding-bottom: 135%; 
+  background: #f2f2f2;
+  border: 2px solid #01352c;
+  overflow: hidden;
+}
+
+.pdf-viewer {
+  position: absolute;
+  top: 10;
+  left: 10;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+body { 
+  /* We set a basic font and margin for the whole page
+     so the navigation bar and content use the same base style. */
+  background-color: #fbf7f2;
+  font-family: Georgia, "Goudy Old Style", "Times New Roman", serif;
+  color: #1f3d2b;
+  margin: 20px;
+}
+
+
+/* This list becomes our navigation bar container.
+   We remove default bullets, center it, and give it a pill shape. */
+#navigation {
+  list-style-type: none;
+  margin: 10px auto;
+  padding: 6px;
+  width: fit-content;
+  background-color: #faf5ef;
+  border-radius: 999px;      /* very large radius makes the bar rounded */
+  border: 1px solid #8a9b5a;
+  overflow: hidden;           /* hides anything that sticks outside the pill shape */
+}
+
+
+/* Each list item is placed next to each other horizontally. */
+#navigation li {
+  float: left;
+}
+
+
+/* The logo is just an image at the start of the bar, not a link.
+   We add a bit of horizontal padding so it is not glued to the edge. */
+#nav-logo {
+  padding: 0 10px;
+}
+
+
+/* The logo image is shown as a small circle inside the bar. */
+#nav-logo img {
+  height: 34px;
+  width: 34px;
+  border-radius: 50%;        /* makes the logo image round */
+  display: block;            /* removes extra space under the image */
+}
+
+
+/* Each navigation link becomes a rounded “chip”.
+   We use padding and border-radius to create the shape. */
+#navigation a {
+  display: block;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 18px;       /* rounds the corners of each link block */
+  background-color: transparent;
+}
+
+
+/* Default and visited links share the same text color. */
+#navigation a:link,
+#navigation a:visited {
+  color: #1f3d2b;
+}
+
+
+/* When the mouse hovers over a link, we change background and text
+   so the user clearly sees which item is under the cursor. */
+#navigation a:hover {
+  background-color: #7E9DA2;
+  color: #fbf7f2;
+}
+
+
+/* While the link is actively clicked, we keep a strong text color. */
+#navigation a:active {
+  color: #fbf7f2;
+}
+
+
+/* The link for the current page gets a different background,
+   so visitors know which section they are on. */
+#navigation a.active {
+  background-color: #dfe8dd;
+  color: #1f3d2b;
+}
+
+
+/* After all the floated list items, this pseudo-element clears the float
+   so the layout below the navigation bar behaves normally. */
+#navigation::after {
+  content: "";
+  display: block;
+  clear: both;
+}

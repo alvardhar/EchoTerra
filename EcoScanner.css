@@ -7,77 +7,75 @@ body {
   text-align: center;
 }
 
-body { 
-  background-color: #fbf7f2;
-  font-family: Georgia, "Goudy Old Style", "Times New Roman", serif;
-  color: #1f3d2b;
-  margin: 20px;
-}
-
-/* pill‑shaped navigation bar */
+/* navigation bar */
 #navigation {
-  list-style-type: none;
+  list-style-type: none;    
   margin: 10px auto;
   padding: 6px;
-  width: fit-content;
+  width: fit-content;       
   background-color: #faf5ef;
-  border-radius: 999px;
+  border-radius: 999px;     
   border: 1px solid #8a9b5a;
-  overflow: hidden;
+  overflow: hidden;        
 }
 
-/* items in a row */
 #navigation li {
   float: left;
 }
 
-/* logo: plain image, no link, no hover */
 #nav-logo {
   padding: 0 10px;
+}
+
+#nav-logo a {
+  display: block;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+#nav-logo a:hover,
+#nav-logo a:active {
+  background: none;
+  color: inherit;          
 }
 
 #nav-logo img {
   height: 34px;
   width: 34px;
-  border-radius: 0%;
+  border-radius: 0;
   display: block;
 }
 
-/* text links: rounded chips */
-#navigation a {
+#navigation li:not(#nav-logo) > a {
   display: block;
-  padding: 10px 20px;
+  padding: 10px 20px;       
   text-align: center;
   text-decoration: none;
   font-size: 1rem;
-  border-radius: 18px;
+  border-radius: 18px;    
   background-color: transparent;
 }
 
-/* normal + visited */
-#navigation a:link,
-#navigation a:visited {
+#navigation li:not(#nav-logo) > a:link,
+#navigation li:not(#nav-logo) > a:visited {
   color: #1f3d2b;
 }
 
-/* hover */
-#navigation a:hover {
+#navigation li:not(#nav-logo) > a:hover {
   background-color: #7E9DA2;
   color: #fbf7f2;
 }
 
-/* active click */
-#navigation a:active {
+#navigation li:not(#nav-logo) > a:active {
   color: #fbf7f2;
 }
 
-/* current page (class="active") */
-#navigation a.active {
+#navigation li:not(#nav-logo) > a.active {
   background-color: #dfe8dd;
   color: #1f3d2b;
 }
 
-/* clear floats */
 #navigation::after {
   content: "";
   display: block;

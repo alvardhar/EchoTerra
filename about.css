@@ -1,80 +1,87 @@
 body {
   font-family: Georgia, "Goudy Old Style", "Times New Roman", serif;
-  background-color: #fbf7f2;  
+  background-color: #fbf7f2;
   color: #1f3d2b;
   margin: 20px;
   line-height: 1.7;
 }
 
+/* navigation bar */
 #navigation {
-  list-style-type: none;
+  list-style-type: none;    
   margin: 10px auto;
   padding: 6px;
-  width: fit-content;
+  width: fit-content;       
   background-color: #faf5ef;
-  border-radius: 999px;
+  border-radius: 999px;     
   border: 1px solid #8a9b5a;
-  overflow: hidden;
+  overflow: hidden;        
 }
 
-/* items in a row */
 #navigation li {
   float: left;
 }
 
-/* logo: plain image, no link, no hover */
 #nav-logo {
   padding: 0 10px;
+}
+
+#nav-logo a {
+  display: block;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+
+#nav-logo a:hover,
+#nav-logo a:active {
+  background: none;
+  color: inherit;          
 }
 
 #nav-logo img {
   height: 34px;
   width: 34px;
-  border-radius: 0%; 
+  border-radius: 0;
   display: block;
 }
 
-/* text links: rounded chips */
-#navigation a {
+#navigation li:not(#nav-logo) > a {
   display: block;
-  padding: 10px 20px;
+  padding: 10px 20px;       
   text-align: center;
   text-decoration: none;
   font-size: 1rem;
-  border-radius: 18px;
+  border-radius: 18px;    
   background-color: transparent;
 }
 
-/* normal + visited */
-#navigation a:link,
-#navigation a:visited {
+#navigation li:not(#nav-logo) > a:link,
+#navigation li:not(#nav-logo) > a:visited {
   color: #1f3d2b;
 }
 
-/* hover */
-#navigation a:hover {
+#navigation li:not(#nav-logo) > a:hover {
   background-color: #7E9DA2;
   color: #fbf7f2;
 }
 
-/* active click */
-#navigation a:active {
+#navigation li:not(#nav-logo) > a:active {
   color: #fbf7f2;
 }
 
-/* current page (class="active") */
-#navigation a.active {
+#navigation li:not(#nav-logo) > a.active {
   background-color: #dfe8dd;
   color: #1f3d2b;
 }
 
-/* clear floats */
 #navigation::after {
   content: "";
   display: block;
   clear: both;
 }
 
+/* headings */
 h2 {
   font-size: 1.6rem;
   color: #1f3d2b;
@@ -99,7 +106,7 @@ h3 {
 
 /* intro text + image */
 #echoterra-intro {
-  background-color: #faf5ef;     
+  background-color: #faf5ef;
   border: 1px solid #7ea04d;
   border-radius: 8px;
   padding: 15px 18px;
@@ -126,7 +133,7 @@ h3 {
 
 /* Results section */
 #results-matter {
-  background-color: #c7da9b;     
+  background-color: #c7da9b;
   border-radius: 8px;
   border: 1px solid #8a9b5a;
   padding: 15px 18px;
@@ -144,7 +151,7 @@ h3 {
 
 .result {
   flex: 1 1 200px;
-  background-color: #ffffff;     
+  background-color: #ffffff;
   border-radius: 6px;
   border: 1px solid #7ea04d;
   padding: 10px 12px;
@@ -166,17 +173,15 @@ h3 {
 }
 
 .mission-card {
-  background-color: #edf5e5;     
+  background-color: #edf5e5;
 }
 
 .vision-card {
-  background-color: #eaf3f7;      
+  background-color: #eaf3f7;
 }
 
 /* Team members */
-#team-members {
-  /* width already set above */
-}
+#team-members { }
 
 .team-intro {
   margin-bottom: 14px;
@@ -213,12 +218,16 @@ h3 {
   background-color: #faf5ef;
   border-radius: 8px;
   border: 1px solid #8a9b5a;
-  padding: 12px 14px;
+  padding: 18px 20px;             
+}
+
+#newsletter-signup form {
+  margin-top: 10px;
 }
 
 input[type="text"],
 input[type="email"] {
-  width: 100%;
+  width: 96%;                  
   padding: 7px;
   margin: 6px 0 12px 0;
   border: 1px solid #1f3d2b;
@@ -242,4 +251,3 @@ button:hover {
   background-color: #7ea04d;
   color: #1f3d2b;
 }
-

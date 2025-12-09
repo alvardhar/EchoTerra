@@ -36,97 +36,90 @@ For example:  <li><a href="index.html" class="active">⌂ Home</a></li>   -->
 CSS
 /* The comments we can include only on Home page, so if you are doing another page, just delete the comments*/
 
-body { 
-  /* We set the general look for the whole page: background, font and text color. */
-  background-color: #fbf7f2;
-  font-family: Georgia, "Goudy Old Style", "Times New Roman", serif;
-  color: #1f3d2b;
-  margin: 20px;
-}
-
-/* This list works as our navigation bar and we give it a pill shape. */
+/* Navigation bar: we use one <ul> that we style as a horizontal menu. */
 #navigation {
-  list-style-type: none;     /* remove default bullets */
-  margin: 10px auto;
+  list-style-type: none;                     /* We remove the default bullets of the list. */
+  margin: 10px auto;                       
   padding: 6px;
-  width: fit-content;        /* bar becomes only as wide as its content */
+  width: fit-content;                        
   background-color: #faf5ef;
-  border-radius: 999px;      /* very large radius = rounded bar */
+  border-radius: 999px;                      
   border: 1px solid #8a9b5a;
-  overflow: hidden;          /* keeps children inside the rounded edges */
+  overflow: hidden;                          
 }
 
-/* We put every menu item next to each other horizontally. */
+/* Every list item is placed next to each other by using float. */
 #navigation li {
-  float: left;
+  float: left;                               /* This moves each <li> to the left until there is no space left. */
 }
 
-/* This is the place where we keep the logo on the left side of the bar. */
+/* We reserve one list item for the logo so it sits at the start of the bar. */
 #nav-logo {
-  padding: 0 10px;
+  padding: 0 10px;                          
 }
 
-/* The logo behaves like a simple image link with no button styling. */
+/* The logo is a link but we do not want it to look like a button. */
 #nav-logo a {
-  display: block;
-  padding: 0;
-  background: none;
-  border-radius: 0;
+  display: block;                           
+  padding: 0;                                
+  background: none;                        
+  border-radius: 0;                         
 }
 
+/* When the mouse goes over the logo, nothing visually changes. */
 #nav-logo a:hover,
 #nav-logo a:active {
-  background: none;
-  color: inherit;            /* logo does not change color on hover/click */
+  background: none;                          
+  color: inherit;                          
 }
 
-/* Size and shape of the logo image. */
+/* Here we control only the image size inside the logo area. */
 #nav-logo img {
   height: 34px;
   width: 34px;
-  border-radius: 0;
-  display: block;
+  border-radius: 0;                        
+  display: block;                            /* This removes the small gap that images usually have under them. */
 }
 
-/* Here we style all the normal text links in the menu (not the logo). */
+/* Links for all the other menu items are turned into small rounded “chips”. */
 #navigation li:not(#nav-logo) > a {
-  display: block;
-  padding: 10px 20px;        /* controls button size */
-  text-align: center;
-  text-decoration: none;
+  display: block;                            /* Each link behaves like a block so padding works in all directions. */
+  padding: 10px 20px;                        
+  text-align: center;                      
+  text-decoration: none;                     /* We remove the underline from links. */
   font-size: 1rem;
-  border-radius: 18px;       /* gives each link rounded corners */
-  background-color: transparent;
+  border-radius: 18px;                      
+  background-color: transparent;             
 }
 
-/* Default text color for links, whether visited or not. */
+/* Here we define the text color for normal and visited links. */
 #navigation li:not(#nav-logo) > a:link,
 #navigation li:not(#nav-logo) > a:visited {
   color: #1f3d2b;
 }
 
-/* Visual feedback when the mouse is over a menu item. */
+/* When the cursor is above a link, we show feedback with a different background and text color. */
 #navigation li:not(#nav-logo) > a:hover {
-  background-color: #7E9DA2;
-  color: #fbf7f2;
+  background-color: #7E9DA2;                 
+  color: #fbf7f2;                             
 }
 
-/* Color while the user is clicking on a menu item. */
+/* While the link is clicked (active), the text stays bright so the user sees the click state. */
 #navigation li:not(#nav-logo) > a:active {
   color: #fbf7f2;
 }
 
-/* This style marks the link of the page we are currently on. */
+/* The .active link is used to show which page the visitor is currently on. */
 #navigation li:not(#nav-logo) > a.active {
-  background-color: #dfe8dd;
+  background-color: #dfe8dd;                 
   color: #1f3d2b;
 }
 
-/* We clear the floats so that content under the menu starts correctly. */
+/* After using float on the <li> elements, we add a clearfix so the next content appears under the bar. */
 #navigation::after {
-  content: "";
+  content: "";                               /* We insert an empty invisible element. */
   display: block;
-  clear: both;
+  clear: both;                               /* This clears the floats from the list items. */
 }
 
 

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Page</title>
+    <link rel="stylesheet" href="payment.css">
+    <script src="payment.js" defer></script>
+</head>
+<body>
+
+    <div class="container payment-container">
+        <h1>PAYMENT</h1>
+        <h3>Enter your card details to complete the purchase</h3>
+
+        <form id="paymentForm">
+            <label for="name">Cardholder Name:</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required>
+
+            <label for="cardNumber">Card Number:</label>
+            <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required maxlength="19">
+
+            <label for="expiry">Expiry Date:</label>
+            <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required maxlength="5">
+
+            <label for="cvv">CVV:</label>
+            <input type="text" id="cvv" name="cvv" placeholder="123" required maxlength="3">
+
+            <button type="submit">Pay Now</button>
+        </form>
+
+        <p><a href="index.html">Back to Home</a></p>
+    </div>
+
+</body>
+</html>

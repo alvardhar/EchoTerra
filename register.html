@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register & Shop</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="nav.css"> 
+    <script src="register.js"></script>
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <ul id="navigation">
+        <li id="nav-logo">
+            <a href="index.html">
+                <img src="logo.png" alt="EchoTerra logo">
+            </a>
+        </li>
+
+        <li><a href="index.html">⌂ Home</a></li>
+        <li><a href="about.html">✧ About Us</a></li>
+        <li><a href="product.html">✦ Products & Services</a></li>
+        <li><a href="tips.html">✾ Eco Tips</a></li>
+        <li><a href="EcoScanner.html">◎ Eco Scanner</a></li>
+        <li><a href="calculator.html">∑ Calculator</a></li>
+        <li><a href="faq.html">？ FAQ</a></li>
+        <li><a href="register.html" class="active">✎ Register</a></li>
+        <li><a href="bag.html">✶ Shopping Bag</a></li>
+        <li><a href="contact.html">✉ Contact Us</a></li>
+    </ul>
+
+
+
+    <div class="main-wrapper">
+
+        <!-- Left Container: Login -->
+        <div class="container login-container">
+            <h1>WELCOME BACK</h1>
+            <h3>Log in to your account to continue:</h3>
+
+            <form>
+                <label for="email">Gmail:</label><br>
+                <input type="email" id="email" name="email" placeholder="example@user.com" required><br>
+
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" placeholder="••••••••" required><br>
+
+                <a href="resetpassword.html">Forget your password? </a><br><br>
+
+                <button type="submit">Log In</button>
+            </form>
+
+            <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </div>
+
+        <!-- Right Container: Shopping Bags -->
+        <div class="container shop-container">
+            <h1>HAVEN'T YOU GOT YOUR BAGE YET?!</h1>
+
+            <form action="payment.html" method="get">
+
+                <div class="bag-item">
+                    <input type="checkbox" id="bag1" name="bags" value="bag1">
+                    <label for="bag1"><img src="bag1.jpeg" alt="Bag 1"></label>
+                </div>
+
+                <div class="bag-item">
+                    <input type="checkbox" id="bag2" name="bags" value="bag2">
+                    <label for="bag2"><img src="bag2.jpeg" alt="Bag 2"></label>
+                </div>
+
+                <div class="bag-item">
+                    <input type="checkbox" id="bag3" name="bags" value="bag3">
+                    <label for="bag3"><img src="bag3.jpeg" alt="Bag 3"></label>
+                </div>
+
+                <div class="bag-item">
+                    <input type="checkbox" id="bag4" name="bags" value="bag4">
+                    <label for="bag4"><img src="bag4.jpeg" alt="Bag 4"></label>
+                </div>
+
+                <button type="submit">Buy Now</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

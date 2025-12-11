@@ -1,0 +1,75 @@
+/* Reset & body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Goudy old style, serif;
+    background-image: url('background-register.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    background-color: rgba(255, 255, 255, 0.89);
+    padding: 30px 40px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 0 15px rgba(1, 53, 44, 0.3);
+    text-align: center;
+}
+
+/* Headings */
+h1, h3 {
+    text-align: center;
+}
+
+/* Form Inputs */
+input[type="text"],
+button {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    margin: 12px auto;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+input[type="text"] {
+    border: 1px solid #bad8b6;
+}
+
+input[type="text"]:focus {
+    border-color: #61b390;
+    outline: none;
+    box-shadow: 0 0 5px rgba(97, 179, 144, 0.5);
+}
+
+/* Button */
+button {
+    background-color: #01352c;
+    color: #e1eacd;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #61b390;
+}
+
+/* Links */
+a {
+    color: #01352c;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #61b390;
+}

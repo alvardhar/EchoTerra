@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="nav.css"> 
+    <script src="signup.js" defer></script> 
+</head>
+
+<body> 
+
+<!-- ================= NAVIGATION BAR ================= -->
+
+<ul id="navigation">
+    <li id="nav-logo">
+        <a href="index.html">
+            <img src="logo.png" alt="EchoTerra logo">
+        </a>
+    </li>
+
+    <li><a href="index.html">⌂ Home</a></li>
+    <li><a href="about.html">✧ About Us</a></li>
+    <li><a href="product.html">✦ Products & Services</a></li>
+    <li><a href="tips.html">✾ Eco Tips</a></li>
+    <li><a href="EcoScanner.html">◎ Eco Scanner</a></li>
+    <li><a href="calculator.html">∑ Calculator</a></li>
+    <li><a href="faq.html">？ FAQ</a></li>
+    <li><a href="register.html">✎ Register</a></li>
+    <li><a href="bag.html">✶ Shopping Bag</a></li>
+    <li><a href="signup.html" class="active">✧ Sign Up</a></li>
+    <li><a href="contact.html">✉ Contact Us</a></li>
+</ul>
+
+
+
+
+<div class="container">
+    <h1>SIGN UP</h1> 
+    <h3>Sign up to get started:</h3>
+
+   <form id="signupForm">
+
+    <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" placeholder="John Doe" required>
+    </div>
+
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="johndoe123" required>
+    </div>
+
+    <div class="form-group">
+        <label for="number">Phone Number:</label>
+        <input type="tel" id="number" name="number" placeholder="+1234567890" required>
+    </div>
+
+    <div class="form-group">
+        <label for="email">Gmail:</label>
+        <input type="email" id="email" name="email" placeholder="example@user.com" required>
+    </div>
+
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="••••••••" required>
+    </div>
+
+    <div class="form-group">
+        <label for="pattern">Pattern:</label>
+        <select id="pattern" name="pattern" required>
+            <option value="" disabled selected>Select a pattern</option>
+            <option value="membership">Membership</option>
+            <option value="contact">Contact</option>
+        </select>
+    </div>
+
+    <button type="submit">Sign Up</button>
+</form>
+
+</div>
+
+</body>
+</html>

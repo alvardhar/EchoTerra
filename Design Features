@@ -7,7 +7,7 @@ body {
   line-height: 1.7;                         /* comfortable reading */
 }
 
-/* 2. Headings */
+/* 2. Headings, but you can not include h1, when you are applying navigation bar*/
 h1 {
   font-size: 2.2rem;
   text-align: center;

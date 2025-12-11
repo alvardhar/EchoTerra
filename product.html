@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eco-Tourism Adventures</title>
 
-    
     <link rel="stylesheet" href="nav.css">
-
-   
     <link rel="stylesheet" href="product.css">
     <script src="product.js" defer></script>
 </head>
@@ -18,27 +15,24 @@
 
     <!-- NAVIGATION BAR -->
     <ul id="navigation">
-      <li id="nav-logo">
-        <a href="index.html">
-          <img src="logo.png" alt="EchoTerra logo">
-        </a>
-      </li>
+        <li id="nav-logo">
+            <a href="index.html">
+                <img src="logo.png" alt="EchoTerra logo">
+            </a>
+        </li>
 
-      <li><a href="about.html">✧ About Us</a></li>
-      <li><a href="product.html" class="active">✦ Products & Services</a></li>
-      <li><a href="tips.html">✾ Eco Tips</a></li>
-      <li><a href="EcoScanner.html">◎ Eco Scanner</a></li>
-      <li><a href="calculator.html">∑ Calculator</a></li>
-      <li><a href="faq.html">？ FAQ</a></li>
-      <li><a href="register.html">✎ Register</a></li>
-      <li><a href="contact.html">✉ Contact Us</a></li>
+        <li><a href="about.html">✧ About Us</a></li>
+        <li><a href="product.html" class="active">✦ Products & Services</a></li>
+        <li><a href="tips.html">✾ Eco Tips</a></li>
+        <li><a href="EcoScanner.html">◎ Eco Scanner</a></li>
+        <li><a href="calculator.html">∑ Calculator</a></li>
+        <li><a href="faq.html">？ FAQ</a></li>
+        <li><a href="register.html">✎ Register</a></li>
+        <li><a href="contact.html">✉ Contact Us</a></li>
     </ul>
-   
 
-
+    <!-- HEADER + SWITCH -->
     <header>
-
-        <!-- Sliding Switch -->
         <div class="toggle-wrapper">
             <div id="switch" class="toggle">
                 <div class="toggle-circle"></div>
@@ -47,7 +41,6 @@
         </div>
     </header>
 
-    
     <!-- SERVICES SECTION -->
     <section id="services-section" class="products">
 
@@ -62,7 +55,7 @@
             <img src="eco2.jpeg" alt="Beach Clean-up">
             <h3>Eco Beach Clean-up - free</h3>
             <p>Help preserve our oceans while enjoying a day of sun, sand, and sustainability.</p>
-            <button class="book-btn service-btn" data-title="Eco Beach Clean-up" data-price="39">Book Now</button>
+            <button class="book-btn service-btn" data-title="Eco Beach Clean-up" data-price="0">Book Now</button>
         </div>
 
         <div class="card">
@@ -125,7 +118,7 @@
             <img src="eco11.jpeg" alt="River Clean-Up">
             <h3>River Clean-Up - free</h3>
             <p>Join our eco-volunteers in protecting local rivers and aquatic life.</p>
-            <button class="book-btn service-btn" data-title="River Clean-Up" data-price="25">Book Now</button>
+            <button class="book-btn service-btn" data-title="River Clean-Up" data-price="0">Book Now</button>
         </div>
 
         <div class="card">
@@ -136,7 +129,6 @@
         </div>
 
     </section>
-
 
     <!-- PRODUCTS SECTION -->
     <section id="products-section" class="products" style="display:none;">
@@ -165,7 +157,7 @@
         <div class="card">
             <img src="eco_product4.jpeg" alt="Recycled Notebook">
             <h3>Recycled Notebook - $7</h3>
-            <p>Eco-friendly notebook made from 100% recycled paper.</p>
+            <p>Eco-friendly notebook made from recycled paper.</p>
             <button class="book-btn product-btn" data-title="Recycled Notebook" data-price="7">Buy Now</button>
         </div>
 
@@ -199,8 +191,7 @@
 
     </section>
 
-
-    <!-- BOOKING MODAL (SERVICES) -->
+    <!-- BOOKING MODAL -->
     <div id="booking-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -224,8 +215,7 @@
         </div>
     </div>
 
-
-    <!-- PAYMENT MODAL (PRODUCTS) -->
+    <!-- PAYMENT MODAL -->
     <div id="payment-modal" class="modal">
         <div class="modal-content">
             <span class="pay-close">&times;</span>

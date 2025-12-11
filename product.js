@@ -1,12 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // Sections for Switch Toggle
+
     const servicesSection = document.getElementById("services-section");
     const productsSection = document.getElementById("products-section");
     productsSection.style.display = "none"; // hide products by default
 
 
+
     // SERVICE BOOKING MODAL
+
     const bookingModal = document.getElementById("booking-modal");
     const bookingClose = document.querySelector(".close");
     const serviceButtons = document.querySelectorAll(".service-btn");
@@ -37,13 +40,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     bookingForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        alert("Your eco adventure is booked!");
+        alert("✅ Your eco adventure is booked!");
         bookingModal.style.display = "none";
         bookingForm.reset();
     });
 
 
+    // ---------------------------
     // PRODUCT PAYMENT MODAL
+    // ---------------------------
     const paymentModal = document.getElementById("payment-modal");
     const paymentClose = document.querySelector(".pay-close");
     const productButtons = document.querySelectorAll(".product-btn");
@@ -74,13 +79,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     paymentForm.addEventListener("submit", (e) => {
         e.preventDefault();
-        alert("Payment successful! Your product is on the way.");
+        alert("💳 Payment successful! Your product is on the way.");
         paymentModal.style.display = "none";
         paymentForm.reset();
     });
 
 
+    // ---------------------------
     // SLIDING SWITCH (Services ↔ Products)
+    // ---------------------------
     const switchToggle = document.getElementById("switch");
     const toggleLabel = document.getElementById("toggle-label");
 

@@ -1,0 +1,178 @@
+/* style text */
+h1, h2 {
+  margin-bottom: 10px;
+  color: #5a8b93; 
+}
+p {
+  color: #1f3d2b; 
+  font-size: 18px;
+}
+
+/* styling the navigation bar */
+#navigation {
+  list-style-type: none;   
+  margin: 10px auto;
+  padding: 6px;
+  width: fit-content;   /* fill the whole page size */
+  background-color: #faf5ef;
+  border-radius: 999px;
+  border: 1px solid #8a9b5a;
+  overflow: hidden;
+}
+
+/* displaying items in a row */
+#navigation li {
+  float: left;
+}
+
+/* logo */
+#nav-logo {
+  padding: 0 10px;
+}
+#nav-logo img {
+  height: 24px;
+  width: 34px;
+  border-radius: 0%;
+  display: block;
+}
+
+/* text links: rounded chips */
+#navigation a {
+  display: block;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 18px;
+  background-color: transparent;
+}
+
+/* normal + visited */
+#navigation a:link,
+#navigation a:visited {
+  color: #1f3d2b;
+}
+
+/* hover */
+#navigation a:hover {
+  background-color: #7E9DA2;
+  color: #fbf7f2;
+}
+
+/* active click */
+#navigation a:active {
+  color: #fbf7f2;
+}
+
+/* current page (class="active") */
+#navigation a.active {
+  background-color: #dfe8dd;
+  color: #1f3d2b;
+}
+
+/* clear floats */
+#navigation::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* shaping the body, text and position in the page */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-image: url(nature.jpg);
+  background-size: cover;  /* making the backgoundr image fill the whole page */
+  background-position: center;  /* make the background centered */
+  background-repeat: no-repeat;   /* avoid stacking the background image multiple times */
+  display: flex;
+  flex-direction: column;  /* stacks header and main-content vertically */
+  font-family: Arial, sans-serif; 
+}
+
+.main-content {
+  flex: 1; /* fills remaining space */
+  display: flex;  
+  flex-direction: column;  
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-box {
+  padding: 40px;
+  border-radius: 15px;  /* create round angles */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  /* shadow on the sides of the box */
+  text-align: center;
+  width: 400px;
+  background-color: #fbf7f2;
+}
+
+.map-box {
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 650px;
+  background-color: #fbf7f2;
+}
+
+
+/* styling the input text area */
+input[type="text"],
+textarea {
+  width: 90%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #a8cbbd;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 16px;
+  box-sizing: border-box;
+  outline: none;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #3a8b72;
+  box-shadow: 0 0 5px rgba(58, 139, 114, 0.4);
+}
+
+/* styling submit button */
+input[type="submit"] {
+  /*background-color: #3a8b72;
+  color: white;*/
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: #5a8b93;
+  color: #f5f0e8;
+}
+
+/* styling submit button when hovered */
+input[type="submit"]:hover {
+  background-color: #1a525b;
+}
+
+input, 
+textarea{
+  font-family:inherit;
+  font-size: 16px;
+}
+
+/* styling the text in the boxes that disappears when user writes */
+input::placeholder,
+textarea::placeholder {
+  color: #9aa8a0;
+  opacity: 1;
+  font-style: italic;
+  font-size: 16px;
+}
+
+/* to have a centered map in the box */
+.map-center {
+  display: flex;
+  justify-content: center;
+}

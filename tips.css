@@ -1,0 +1,148 @@
+body {
+  background-color: #fbf7f2;
+  font-family: Arial, sans-serif; 
+}
+
+/* style text */
+h1, h2 {
+  margin-bottom: 10px;
+  color: #5a8b93; 
+}
+p {
+  color: #1f3d2b; 
+  font-size: 18px;
+}
+
+/* styling the navigation bar */
+#navigation {
+  list-style-type: none;   
+  margin: 10px auto;
+  padding: 6px;
+  width: fit-content;   /* fill the whole page size */
+  background-color: #faf5ef;
+  border-radius: 999px;
+  border: 1px solid #8a9b5a;
+  overflow: hidden;
+}
+
+/* displaying items in a row */
+#navigation li {
+  float: left;
+}
+
+/* logo */
+#nav-logo {
+  padding: 0 10px;
+}
+#nav-logo img {
+  height: 24px;
+  width: 34px;
+  border-radius: 0%;
+  display: block;
+}
+
+/* text links: rounded chips */
+#navigation a {
+  display: block;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 18px;
+  background-color: transparent;
+}
+
+/* normal + visited */
+#navigation a:link,
+#navigation a:visited {
+  color: #1f3d2b;
+}
+
+/* hover */
+#navigation a:hover {
+  background-color: #7E9DA2;
+  color: #fbf7f2;
+}
+
+/* active click */
+#navigation a:active {
+  color: #fbf7f2;
+}
+
+/* current page (class="active") */
+#navigation a.active {
+  background-color: #dfe8dd;
+  color: #1f3d2b;
+}
+
+/* clear floats */
+#navigation::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.main-content {
+  padding: 10px;
+}
+
+.image-container { 
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap; 
+}
+
+.expandable-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap; 
+}
+
+.expandable {
+  flex: 1;
+  max-width: 500px;
+  margin: 18px 0;
+  font-size: 18px;
+}
+
+.expandable__title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px;
+  user-select: none;
+  background-color: #5a8b93;
+  color: white;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+}
+
+.expandable__title {
+  font-weight: bold;
+}
+
+.expandable__content-wrapper {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease;
+  border: 1px solid #5a8b93;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+}
+
+.expandable__content {
+  padding: 12px;
+  font-size: 0.95rem;
+  background: #fff;
+}
+
+.expandable--open .expandable__content-wrapper {
+  max-height: 10000px;
+}
+
+.expandable__toggle {
+  font-size: 24px;
+  font-weight: bold;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title> Contact </title>  
+        <link rel="stylesheet" href="contact.css"> 
+        <script src="contact.js"></script>
+    </head>
+    <body>
+        <ul id="navigation">
+            <li id="nav-logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="EchoTerra logo">
+                </a>
+            </li>
+            <li><a href="about.html">✧ About Us</a></li>
+            <li><a href="product.html">◆ Products &amp; Services</a></li>
+            <li><a href="tips.html">✺ Eco Tips</a></li>
+            <li><a href="EcoScanner.html">✶ Eco Scanner</a></li>
+            <li><a href="calculator.html">∑ Calculator</a></li>
+            <li><a href="faq.html">？ FAQ</a></li>
+            <li><a href="register.html">✎ Register</a></li>
+            <li><a href="bag.html">✦ Shopping Bag</a></li>
+            <li><a href="contact.html" class="active">✉ Contact Us</a></li>
+        </ul>
+        <div class="main-content">  <!-- create a div class to have the map box underneath the contact box -->
+            <div class="contact-box">
+                <h1> Contact us </h1>
+                <h2> Any questions ? Feel free to reach out to us ! </h2>
+                <br>
+                <form name="contactForm" onsubmit="return validateForm()" method="post">
+                    <p> Enter your email here </p>    
+                        <input type="text" name="email" placeholder="Enter your email here...">
+                    <br>
+                    <p> Enter your feedback here </p>
+                        <textarea name="feedback" rows="4" placeholder="Enter you feedback here..."></textarea>
+                        <input type="submit" name="Send">
+                </form>
+            </div>
+            <br>
+            <div class="map-box">
+                <h1> You can meet us here !! </h1>
+                <div class="map-center">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10248.529729563525!2d4.829514425524813!3d45.74396124278636!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ecc1f92a9f33%3A0x19d7ecf50a69094c!2semlyon%20business%20school!5e0!3m2!1sfr!2sfr!4v1765120522373!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<!-- source : google maps -->

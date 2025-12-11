@@ -8,36 +8,37 @@
 
     <link rel="stylesheet" href="nav.css">
     <link rel="stylesheet" href="product.css">
-    <script src="product.js" defer></script>
+    <script src="product.js" defer></script> <!-- JS loaded after HTML -->
 </head>
 
 <body>
 
     <!-- NAVIGATION BAR -->
     <ul id="navigation">
-        <li id="nav-logo">
-            <a href="index.html">
-                <img src="logo.png" alt="EchoTerra logo">
-            </a>
-        </li>
+      <li id="nav-logo">
+        <a href="index.html">
+          <img src="logo.png" alt="EchoTerra logo">
+        </a>
+      </li>
 
-        <li><a href="about.html">✧ About Us</a></li>
-        <li><a href="product.html" class="active">✦ Products & Services</a></li>
-        <li><a href="tips.html">✾ Eco Tips</a></li>
-        <li><a href="EcoScanner.html">◎ Eco Scanner</a></li>
-        <li><a href="calculator.html">∑ Calculator</a></li>
-        <li><a href="faq.html">？ FAQ</a></li>
-        <li><a href="register.html">✎ Register</a></li>
-        <li><a href="contact.html">✉ Contact Us</a></li>
+      <li><a href="about.html">✧ About Us</a></li>
+      <li><a href="product.html" class="active">✦ Products & Services</a></li>
+      <li><a href="tips.html">✾ Eco Tips</a></li>
+      <li><a href="EcoScanner.html">◎ Eco Scanner</a></li>
+      <li><a href="calculator.html">∑ Calculator</a></li>
+      <li><a href="faq.html">？ FAQ</a></li>
+      <li><a href="register.html">✎ Register</a></li>
+      <li><a href="bag.html">✶ Shopping Bag</a></li>
+      <li><a href="contact.html">✉ Contact Us</a></li>
     </ul>
 
-    <!-- HEADER + SWITCH -->
     <header>
+        <!-- Sliding Switch | toggles Services/Products sections -->
         <div class="toggle-wrapper">
             <div id="switch" class="toggle">
-                <div class="toggle-circle"></div>
+                <div class="toggle-circle"></div> <!-- animated slider -->
             </div>
-            <span id="toggle-label">Services</span>
+            <span id="toggle-label">Services</span> <!-- label updated by JS -->
         </div>
     </header>
 
@@ -48,6 +49,8 @@
             <img src="eco1.jpeg" alt="Forest Hiking">
             <h3>Forest Hiking - $49</h3>
             <p>Explore lush forests with expert eco-guides and learn about local ecosystems.</p>
+
+            <!-- data-* used by JS to fill modal -->
             <button class="book-btn service-btn" data-title="Forest Hiking" data-price="49">Book Now</button>
         </div>
 
@@ -55,7 +58,7 @@
             <img src="eco2.jpeg" alt="Beach Clean-up">
             <h3>Eco Beach Clean-up - free</h3>
             <p>Help preserve our oceans while enjoying a day of sun, sand, and sustainability.</p>
-            <button class="book-btn service-btn" data-title="Eco Beach Clean-up" data-price="0">Book Now</button>
+            <button class="book-btn service-btn" data-title="Eco Beach Clean-up" data-price="39">Book Now</button>
         </div>
 
         <div class="card">
@@ -118,7 +121,7 @@
             <img src="eco11.jpeg" alt="River Clean-Up">
             <h3>River Clean-Up - free</h3>
             <p>Join our eco-volunteers in protecting local rivers and aquatic life.</p>
-            <button class="book-btn service-btn" data-title="River Clean-Up" data-price="0">Book Now</button>
+            <button class="book-btn service-btn" data-title="River Clean-Up" data-price="25">Book Now</button>
         </div>
 
         <div class="card">
@@ -130,7 +133,7 @@
 
     </section>
 
-    <!-- PRODUCTS SECTION -->
+    <!-- PRODUCTS SECTION (hidden initially) -->
     <section id="products-section" class="products" style="display:none;">
 
         <div class="card">
@@ -157,7 +160,7 @@
         <div class="card">
             <img src="eco_product4.jpeg" alt="Recycled Notebook">
             <h3>Recycled Notebook - $7</h3>
-            <p>Eco-friendly notebook made from recycled paper.</p>
+            <p>Eco-friendly notebook made from 100% recycled paper.</p>
             <button class="book-btn product-btn" data-title="Recycled Notebook" data-price="7">Buy Now</button>
         </div>
 
@@ -191,10 +194,10 @@
 
     </section>
 
-    <!-- BOOKING MODAL -->
-    <div id="booking-modal" class="modal">
+    <!-- BOOKING MODAL (SERVICES) -->
+    <div id="booking-modal" class="modal"> <!-- hidden pop-up -->
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close">&times;</span> <!-- JS closes modal -->
             <h2>Book Your Eco Experience</h2>
 
             <form id="booking-form">
@@ -205,42 +208,68 @@
                 <input type="email" id="email" required>
 
                 <label>Selected Tour:</label>
-                <input type="text" id="selected-tour" readonly>
+                <input type="text" id="selected-tour" readonly> <!-- filled by JS -->
 
                 <label>Price:</label>
-                <input type="text" id="selected-price" readonly>
+                <input type="text" id="selected-price" readonly> <!-- filled by JS -->
 
                 <button type="submit">Confirm Booking</button>
             </form>
         </div>
     </div>
 
-    <!-- PAYMENT MODAL -->
-    <div id="payment-modal" class="modal">
-        <div class="modal-content">
-            <span class="pay-close">&times;</span>
-            <h2>Checkout</h2>
+   <!-- PAYMENT MODAL (PRODUCTS) -->
+<div id="payment-modal" class="modal"> <!-- second modal -->
+    <div class="modal-content">
+        <span class="pay-close">&times;</span> <!-- close button -->
+        <h2>Checkout</h2>
 
-            <form id="payment-form">
-                <label>Product:</label>
-                <input type="text" id="product-name" readonly>
+        <form id="payment-form">
 
-                <label>Price:</label>
-                <input type="text" id="product-price" readonly>
+            <label>Product:</label>
+            <input type="text" id="product-name" readonly> <!-- JS inserts product -->
 
-                <label>Your Name:</label>
-                <input type="text" required>
+            <label>Price:</label>
+            <input type="text" id="product-price" readonly>
 
-                <label>Your Email:</label>
-                <input type="email" required>
+            <label>Your Name:</label>
+            <input type="text" required>
 
-                <label>Card Number:</label>
-                <input type="text" required>
+            <label>Your Email:</label>
+            <input type="email" required>
 
-                <button type="submit">Pay Now</button>
-            </form>
-        </div>
+            <!-- APPLE PAY BUTTON (simulated trigger) -->
+            <button type="button" id="apple-pay-btn" class="apple-pay">
+                 Pay with Apple Pay
+            </button>
+
+            <hr>
+
+            <!-- Payment fields -->
+            <label>Card Number:</label>
+            <input type="text" id="card-number" required placeholder="1234 5678 9012 3456">
+
+            <div class="card-row"> <!-- row grouping -->
+                <div class="column">
+                    <label>Expiry Month:</label>
+                    <input type="text" placeholder="MM" maxlength="2" required>
+                </div>
+
+                <div class="column">
+                    <label>Expiry Year:</label>
+                    <input type="text" placeholder="YY" maxlength="2" required>
+                </div>
+
+                <div class="column">
+                    <label>CVV:</label>
+                    <input type="text" placeholder="CVV" maxlength="3" required>
+                </div>
+            </div>
+
+            <button type="submit">Pay Now</button>
+        </form>
     </div>
+</div>
 
 </body>
 </html>

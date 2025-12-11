@@ -10,11 +10,7 @@ body {
     color: #1f3d2b;
     line-height: 1.7;
 
-    /* KEEP YOUR BACKGROUND PICTURE */
-    background-image: url('background-register.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-color: #fbf7f2;
 }
 
 
